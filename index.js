@@ -10,6 +10,12 @@ $(document).keypress(function(){
         nextSequence();
     }
 });
+$("#any_key").click(function(){
+    if(!start){
+        start = true;
+        nextSequence();
+    }
+});
 $(".btn").click(function(){
     id = $(this).attr("id");
     userPattern.push(id);
