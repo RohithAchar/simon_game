@@ -10,7 +10,7 @@ $(document).keypress(function(){
         nextSequence();
     }
 });
-$("#any_key").on("tap",function(){
+$(document).on("tap",function(){
     if(!start){
         start = true;
         nextSequence();
