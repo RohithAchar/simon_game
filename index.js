@@ -10,12 +10,16 @@ $(document).keypress(function(){
         nextSequence();
     }
 });
-$(document).on("tap",function(){
-    if(!start){
-        start = true;
-        nextSequence();
-    }
+$("#any_key").click(function(){
+    start = true;
+    nextSequence();
 });
+// $(document).on("tap",function(){
+//     if(!start){
+//         start = true;
+//         nextSequence();
+//     }
+// });
 $(".btn").click(function(){
     id = $(this).attr("id");
     userPattern.push(id);
