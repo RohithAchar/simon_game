@@ -65,3 +65,9 @@ body {
   border: 10px solid black;
   border-radius: 10px;
 }
+#center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
