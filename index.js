@@ -4,13 +4,23 @@ var colors = ["red","green","blue","yellow"];
 var level = 0;
 var start = false;
 
+const startButton = $("#any_key");
+function hideStartButton(){
+    startButton.addClass('hide-button');
+}
+function enableStartButton(){
+    startButton.removeClass('hide-button');
+}
+
 $(document).keypress(function(){
+    hideStartButton();
     if(!start){
         start = true;
         nextSequence();
     }
 });
-$("#any_key").click(function(){
+startButton.click(function(e){
+    hideStartButton();
     start = true;
     nextSequence();
 });
@@ -38,7 +48,6 @@ function validate(currentIndex){
             }
         }
         else{
-            console.log("Called start");
             playSound("wrong");
             restart();
         }
@@ -62,7 +71,6 @@ function nextSequence(){
 }
 
 function restart(){
-    console.log("Entered start");
     level = 0;
     start = false;
     userPattern = [];
@@ -70,6 +78,7 @@ function restart(){
     $("body").css("background-color","red");
     $("#level-title").text("Game over");
     setTimeout(function(){
+        enableStartButton();
         $("body").css("background-color","#011F3F");
         $("#level-title").text("Press any KEY to start the game");
     },1000);
